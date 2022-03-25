@@ -13,8 +13,7 @@ const Results = ({ result }) => {
       newResult.sort().map((res) => (
         <div className="multiple-answers">
           <div className="answer">
-            <input type="radio" id={res[0]} name="product" value={res[0]} />
-            <label htmlFor={res[0]}>{res[0]}: {res[1]}</label>
+            {res[0]}: {res[1]}
           </div>
         </div>
       ))
@@ -32,8 +31,7 @@ const Results = ({ result }) => {
       formatDate.map((res) => (
         <div className="multiple-answers">
           <div className="answer">
-            <input type="radio" id={res} name="product" value={res} />
-            <label htmlFor={res}>{ res }</label>
+            { res }
           </div>
         </div>
       ))
