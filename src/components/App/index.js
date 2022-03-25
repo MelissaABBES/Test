@@ -1,7 +1,6 @@
 // == Import
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Surveys from '../Surveys';
 import './styles.css';
 

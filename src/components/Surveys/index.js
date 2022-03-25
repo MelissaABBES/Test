@@ -21,27 +21,25 @@ const Surveys = () => {
 
   return (
     <div className="surveys">
-      {
-        sortList.map((survey) => (
-          <Survey
-            key={survey.code}
-            {...survey}
-            handleVisibility={() => {
-              const isVisible = isLoaded();
-              dispatch(isVisible);
-              const isNotVisible = isNotLoaded();
-              dispatch(isNotVisible);
-            }}
-            handleCode={() => {
-              const action2 = getCodeList(survey.code);
-              dispatch(action2);
-              const action = fetchDetails();
-              dispatch(action);
-            }}
-            infosVisible={isLoad}
-          />
-        ))
-      }
+      {sortList.map((survey) => (
+        <Survey
+          key={survey.code}
+          {...survey}
+          handleVisibility={() => {
+            const isVisible = isLoaded();
+            dispatch(isVisible);
+            const isNotVisible = isNotLoaded();
+            dispatch(isNotVisible);
+          }}
+          handleCode={() => {
+            const action2 = getCodeList(survey.code);
+            dispatch(action2);
+            const action = fetchDetails();
+            dispatch(action);
+          }}
+          infosVisible={isLoad}
+        />
+      ))}
     </div>
   );
 };
