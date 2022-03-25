@@ -1,23 +1,28 @@
 .details-survey-open {
-  display: block;
-  padding: 10px 5px;
+  display: block !important;
+  height: 0%;
+  animation: showDown 1s ease-in-out forwards;
 }
 
 .details-survey {
   display: none;
-  padding: 10px 5px;
+  height: 0%;
+  animation: showDown 1s ease-in-out forwards;
 }
 
-.type {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin:20px 0;
+.detail {
+  padding: 10px 15px;
+  background-color: #eeeeee38;
 }
 
-.label {
-  width: 100%;
-  margin-bottom: 10px;
+.show {
+  animation: showDown 3s ease-in-out;
+}
+
+@keyframes showDown {
+  from {
+    height: 0%;
+  } to {
+    height: 100%;
+  }
 }

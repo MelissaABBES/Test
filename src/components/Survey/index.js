@@ -1,5 +1,6 @@
 // == Import
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
 
@@ -10,7 +11,6 @@ const Survey = ({
   const { codeList, isLoad, isNotLoad } = useSelector((state) => state);
   const surveyVisible = infosVisible ? 'survey-selected' : 'survey';
   const answerVisible = infosVisible ? 'details-survey-open' : 'details-survey';
-  const dispatch = useDispatch();
 
   const handleClick = (evt) => {
     evt.preventDefault();
@@ -53,6 +53,14 @@ const Survey = ({
       </div>
     </div>
   );
+};
+
+Survey.propTypes = {
+  name: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
+  handleCode: PropTypes.func.isRequired,
+  handleVisibility: PropTypes.func.isRequired,
+  infosVisible: PropTypes.bool.isRequired,
 };
 
 // == Export

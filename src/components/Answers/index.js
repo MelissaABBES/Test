@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux';
 import Results from './Results';
 
 // == Composant
-const Details = ({ visibility }) => {
+const Details = () => {
   const answers = useSelector((state) => state.answers);
-  const classVisible = visibility ? 'details-survey-close' : 'details-survey-open';
   return (
     <div className="detail">
       {

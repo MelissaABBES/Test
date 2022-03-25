@@ -9,7 +9,7 @@
 .survey:hover {
   font-weight: 600;
   background-color: #282c344d;
-  color:white;
+  color:grey;
   cursor: pointer;
 }
 
@@ -31,8 +31,10 @@
   width: 30%;
   margin: 0px auto;
   background-color: #282c344d;
-  color:white;
+  color:grey;
+  font-weight: 600;
   cursor: pointer;
+  border-bottom: 1px solid rgba(40,44,52,.70196);
 }
 
 .survey-selected .details-survey-open {

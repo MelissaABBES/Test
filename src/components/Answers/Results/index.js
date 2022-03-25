@@ -1,5 +1,7 @@
 // == Import
 import xtype from 'xtypejs';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 // == Composant
@@ -10,30 +12,60 @@ const Results = ({ result }) => {
     return (
       newResult.map((res) => (
         <div className="multiple-answers">
-          <p>{res[0]}: {res[1]}</p>
+          <div className="answer">
+            <input type="radio" id={res[0]} name="product" value={res[0]} />
+            <label htmlFor={res[0]}>{res[0]}: {res[1]}</label>
+          </div>
         </div>
       ))
     );
   }
   if (xtype.type(result) === 'array') {
+    const formatDate = [];
+    let momentDate = '';
+    result.forEach((element) => {
+      momentDate = moment(element).format('DD/MM/YYYY');
+      formatDate.push(momentDate);
+      return momentDate;
+    });
     return (
-      result.map((res) => (
-        <p>{res}</p>
+      formatDate.map((res) => (
+        <div className="multiple-answers">
+          <div className="answer">
+            <input type="radio" id={res} name="product" value={res} />
+            <label htmlFor={res}>{ res }</label>
+          </div>
+        </div>
       ))
     );
   }
 
   if (xtype.type(result) === 'number') {
+    const NumbResult = Number(result);
     return (
-      <p>{result}</p>
+      <div className="answer">
+        <p>{Math.floor(NumbResult)}</p>
+      </div>
     );
   }
 
   return (
-    <div className="details-survey">
+    <div className="details">
       <p />
     </div>
   );
+};
+
+Results.propTypes = {
+  result: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.object,
+  ]),
+};
+
+Results.defaultProps = {
+  result: null,
 };
 
 // == Export

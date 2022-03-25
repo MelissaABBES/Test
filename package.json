@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "moment": "^2.29.1",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
