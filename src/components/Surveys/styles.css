@@ -1,0 +1,9 @@
+.survey {
+  width: 30%;
+  margin: 0px auto;
+}
+
+.survey:not(:last-child) {
+  border-bottom: 1px solid #282c34b3;
+}
+

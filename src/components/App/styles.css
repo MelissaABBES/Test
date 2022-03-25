@@ -1,0 +1,45 @@
+.app {
+  text-align: center;
+}
+
+header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.app-link {
+  color: #61dafb;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  margin: 40px auto 0px;
+  background: #282c34b3;
+  color: white;
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+.head_name {
+  width: 40%;
+}
+
+.head_code {
+  width: 60%;
+}
+

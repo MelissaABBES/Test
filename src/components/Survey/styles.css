@@ -1,0 +1,43 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 0;
+}
+
+.survey:hover {
+  font-weight: 600;
+  background-color: #282c344d;
+  color:white;
+  cursor: pointer;
+}
+
+.survey:hover .details-survey {
+  background-color: white;
+  color:#000;
+  font-weight: 400;
+}
+
+.body_name {
+  width: 40%;
+}
+
+.body_code {
+  width: 60%;
+}
+
+.survey-selected {
+  width: 30%;
+  margin: 0px auto;
+  background-color: #282c344d;
+  color:white;
+  cursor: pointer;
+}
+
+.survey-selected .details-survey-open {
+  background-color: white;
+  color:#000;
+  font-weight: 400;
+  cursor: initial;
+}
