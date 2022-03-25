@@ -10,7 +10,7 @@ const Results = ({ result }) => {
     const myResult = result;
     const newResult = Object.keys(myResult).map((cle) => [cle, myResult[cle]]);
     return (
-      newResult.map((res) => (
+      newResult.sort().map((res) => (
         <div className="multiple-answers">
           <div className="answer">
             <input type="radio" id={res[0]} name="product" value={res[0]} />
