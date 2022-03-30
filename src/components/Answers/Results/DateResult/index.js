@@ -3,6 +3,11 @@ import moment from 'moment';
 import ReactEcharts from 'echarts-for-react';
 
 const DateResult = ({ ArrayResult }) => {
+
+  function formatedDate() {
+
+  }
+
   // DATES
   const formatDateX = [];
   let momentDateX = '';

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
 
-function 
-
 // == Composant
 const Survey = ({
   name, code, handleCode, handleVisibility, infosVisible,
