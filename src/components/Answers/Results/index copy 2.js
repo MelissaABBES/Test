@@ -1,7 +1,6 @@
 // == Import
 import xtype from 'xtypejs';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import ReactEcharts from 'echarts-for-react';
 import './styles.css';
 import BestSellersResult from './BestSellersResult';
@@ -10,13 +9,14 @@ import NumberResult from './NumberResult';
 
 // == Composant
 const Results = ({ results }) => {
-  // PRODUCTS
   const myResult = results;
   const newResult = Object.keys(myResult).map((cle) => [cle, myResult[cle]]);
 
-  const datas = newResult.sort().map((res) => (
-    { value: res[1], name: res[0] }
-  ));
+  const dataNames = newResult.sort().map((resProduct) => resProduct[0]);
+  const dataValue = newResult.sort().map((resValue) => resValue[1]);
+
+  console.log(dataNames);
+  console.log(dataValue);
 
   // Chart style
   const style = {
@@ -48,11 +48,12 @@ const Results = ({ results }) => {
         itemStyle: {
           borderRadius: 8,
         },
-        data: datas,
+        data: dataValue,
+        name: dataNames,
       },
     ],
   };
-
+  // value: dataValue, name: dataNames
   if (xtype.type(results) === 'object') {
     return (
       // <BestSellersResult ObjectResult={results} />

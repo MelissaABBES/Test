@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
 
+function 
+
 // == Composant
 const Survey = ({
   name, code, handleCode, handleVisibility, infosVisible,
 }) => {
-  const { codeList, isLoad, isNotLoad } = useSelector((state) => state);
+  const { codeList, isNotLoad } = useSelector((state) => state);
   const surveyVisible = infosVisible ? 'survey-selected' : 'survey';
   const answerVisible = infosVisible ? 'details-survey-open' : 'details-survey';
 
@@ -31,7 +33,7 @@ const Survey = ({
           <div className="body_code">{code}</div>
         </div>
         <div className={answerVisible}>
-          { isLoad && <Answers key={name} /> }
+          { infosVisible && <Answers key={name} /> }
         </div>
       </div>
     );

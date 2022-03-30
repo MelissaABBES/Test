@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Results from './Results';
 
 // == Composant
-const Details = () => {
+const Answers = () => {
   const answers = useSelector((state) => state.answers);
   return (
     <div className="detail">
@@ -12,7 +12,7 @@ const Details = () => {
         answers.map((element) => (
           <div className="type">
             <div className="label">{element.label}</div>
-            <Results key={element.type} result={element.result} />
+            <Results key={element.type} results={element.result} />
           </div>
         ))
       }
@@ -21,4 +21,4 @@ const Details = () => {
 };
 
 // == Export
-export default Details;
+export default Answers;
