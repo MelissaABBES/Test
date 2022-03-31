@@ -1,17 +1,39 @@
+import React from 'react';
+import Survey from '../../src/components/Survey';
 import App from '../../src/components/App';
-import Answers from '../../src/components/Answers';
-import { Provider } from 'react-redux';
-import store from '../../src/store';
-import {shallow} from 'enzyme';
-import listSurvey from '../../public/api/list.json';
+import { shallow, mount, ShallowWrapper } from 'enzyme';
 import { expect } from '@jest/globals';
 
-describe('<App />', () => {
-  const wrapper = shallow(<Provider store={store}><App /></Provider>);
-  test('it should have one title', () => {
-      // Ici je souhaite tester que mon composant contienne un élément avec la class 'content-title'
-      // Dans le wrapper on a accès aux méthodes du DOM qui permettent de faire des recherches
-      // wrapper.find() équivalent de querySelectorAll()
-      expect(wrapper.find('.head_name')).toHaveLength(1);
-  });
+import { Provider } from 'react-redux';
+import store from '../../src/store';
+
+describe('<Survey />', () => {
+  // const wrapper = shallow(<Provider store={store}><Survey name='name' code='code' handleCode={() => {}} handleVisibility={() => {}} infosVisible={true} /></Provider>);
+  // console.log(wrapper.debug({ ignoreProps: true }));
+  // test('it should have one title', () => {
+  //   console.log(wrapper.debug({ ignoreProps: true }));
+  //     expect(wrapper.find('Survey')).toHaveLength(1);
+  // });
+
+  // it('<Survey />', () => {
+  //   const component = shallow(<Provider store={store}><Survey name='name' code='code' handleCode={() => {}} handleVisibility={() => {}} infosVisible={true} /></Provider>);
+  //   console.log(component.debug({ ignoreProps: true }));
+  //   const wrapper = component.find('.survey');
+  //   expect(wrapper.lenght).toBe(2);
+  // });
+
+  it('Provider contain App', () => {
+    let providerComponent = shallow(<Provider store={store}><App /></Provider>);
+    console.log(providerComponent.debug());
+    const wrapper = providerComponent.find('App');
+    expect(wrapper.lenght).toBe(1);
+  })
+
+  // it('<App />', () => {
+  //   const component = shallow(<Provider store={store}><App /></Provider>);
+  //   console.log(component.debug());
+  //   const wrapper = component.find('.head');
+  //   expect(wrapper.lenght).toBe(1);
+  // })
+
 });

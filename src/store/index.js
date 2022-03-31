@@ -7,7 +7,7 @@ import listMiddleware from '../middlewares/listMiddleware';
 import detailMiddleware from '../middlewares/detailMiddleware';
 
 // == Enhancers
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = compose;
 
 const enhancers = composeEnhancers(
   applyMiddleware(

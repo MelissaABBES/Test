@@ -1,27 +1,22 @@
 // == Import
 import './styles.css';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Survey from '../Survey';
 import {
-  fetchDetails, fetchList, getCodeList, isLoaded, isNotLoaded,
+  fetchDetails, getCodeList, isLoaded, isNotLoaded,
 } from '../../actions';
+import { useSortList, usefetchAllList } from '../../Utils';
 
 // == Composant
 const Surveys = () => {
-  const lists = useSelector((state) => state.list);
-  const sortList = [].concat(lists).sort((a, b) => (a.itemM > b.itemM ? 1 : -1));
-  const { isLoad } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const action = fetchList();
-    dispatch(action);
-  }, []);
+  usefetchAllList();
+  const isSortList = useSortList();
 
   return (
     <div className="surveys">
-      {sortList.map((survey) => (
+      {isSortList.map((survey) => (
         <Survey
           key={survey.code}
           {...survey}
@@ -32,12 +27,11 @@ const Surveys = () => {
             dispatch(isNotVisible);
           }}
           handleCode={() => {
-            const action2 = getCodeList(survey.code);
-            dispatch(action2);
-            const action = fetchDetails();
-            dispatch(action);
+            const getGoodCodeList = getCodeList(survey.code);
+            dispatch(getGoodCodeList);
+            const getAllAnswers = fetchDetails();
+            dispatch(getAllAnswers);
           }}
-          infosVisible={isLoad}
         />
       ))}
     </div>

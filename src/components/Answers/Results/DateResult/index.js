@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import ReactEcharts from 'echarts-for-react';
 
+
 const DateResult = ({ ArrayResult }) => {
 
-  function formatedDate() {
+  // function useformatedDate(initialValue = ArrayResult) {
 
-  }
+  // }
 
   // DATES
   const formatDateX = [];

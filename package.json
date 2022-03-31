@@ -55,8 +55,11 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "check-prop-types": "^1.1.2",
     "echarts": "^5.3.1",
     "echarts-for-react": "^3.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "moment": "^2.29.1",
     "prop-types": "*",
     "react": "*",
@@ -65,5 +68,17 @@
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.2",
     "xtypejs": "^0.7.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

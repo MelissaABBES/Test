@@ -6,7 +6,7 @@ import {
   RECEIVED_LIST,
 } from '../actions';
 
-const stateInitial = {
+export const stateInitial = {
   isLoad: false,
   isNotLoad: false,
   list: [],

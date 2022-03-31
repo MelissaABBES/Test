@@ -3,14 +3,20 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
+import {
+  useCodeList, isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded, useResultType,
+} from '../../Utils';
 
 // == Composant
 const Survey = ({
-  name, code, handleCode, handleVisibility, infosVisible,
+  name, code, handleCode, handleVisibility,
 }) => {
-  const { codeList, isNotLoad } = useSelector((state) => state);
-  const surveyVisible = infosVisible ? 'survey-selected' : 'survey';
-  const answerVisible = infosVisible ? 'details-survey-open' : 'details-survey';
+  const isLoaded = useSelector(isSurveyAnswersLoaded);
+  const isNotLoaded = useSelector(isSurveyAnswersIsNotLoaded);
+
+  const getCodeList = useCodeList();
+  const surveyVisible = isLoaded ? 'survey-selected' : 'survey';
+  const answerVisible = isLoaded ? 'details-survey-open' : 'details-survey';
 
   const handleClick = (evt) => {
     evt.preventDefault();
@@ -18,7 +24,7 @@ const Survey = ({
     handleVisibility();
   };
 
-  if (codeList === code) {
+  if (getCodeList === code) {
     return (
       <div className={surveyVisible}>
 
@@ -31,7 +37,7 @@ const Survey = ({
           <div className="body_code">{code}</div>
         </div>
         <div className={answerVisible}>
-          { infosVisible && <Answers key={name} /> }
+          { isLoaded && <Answers key={name} /> }
         </div>
       </div>
     );
@@ -49,7 +55,7 @@ const Survey = ({
         <div className="body_code">{code}</div>
       </div>
       <div className={answerVisible}>
-        { isNotLoad && <Answers visibility={handleVisibility} key={name} /> }
+        { isNotLoaded && <Answers key={name} /> }
       </div>
     </div>
   );
@@ -60,7 +66,6 @@ Survey.propTypes = {
   code: PropTypes.string.isRequired,
   handleCode: PropTypes.func.isRequired,
   handleVisibility: PropTypes.func.isRequired,
-  infosVisible: PropTypes.bool.isRequired,
 };
 
 // == Export

@@ -1,11 +1,12 @@
 // == Import
 import './styles.css';
 import { useSelector } from 'react-redux';
+import { isAnswersInSurvey } from '../../Utils';
 import Results from './Results';
 
 // == Composant
 const Answers = () => {
-  const answers = useSelector((state) => state.answers);
+  const answers = useSelector(isAnswersInSurvey);
   return (
     <div className="detail">
       {
