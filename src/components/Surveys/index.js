@@ -11,7 +11,9 @@ import { useSortList, usefetchAllList } from '../../Utils';
 // == Composant
 const Surveys = () => {
   const dispatch = useDispatch();
+
   usefetchAllList();
+
   const isSortList = useSortList();
 
   return (

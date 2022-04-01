@@ -2,13 +2,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import ReactEcharts from 'echarts-for-react';
 
-
 const DateResult = ({ ArrayResult }) => {
-
-  // function useformatedDate(initialValue = ArrayResult) {
-
-  // }
-
   // DATES
   const formatDateX = [];
   let momentDateX = '';
@@ -38,7 +32,7 @@ const DateResult = ({ ArrayResult }) => {
 
   // Chart style
   const style = {
-    height: '90vh',
+    height: '60vh',
     width: '100%',
   };
 
@@ -50,6 +44,11 @@ const DateResult = ({ ArrayResult }) => {
     yAxis: {
       type: 'category',
       boundaryGap: false,
+    },
+    markLine: {
+      symbol: ['none', 'none'],
+        label: { show: false },
+      data: [{ xAxis: 1 }, { xAxis: 2 }, { xAxis: 4 }],
     },
     series: [
       {

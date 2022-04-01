@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
 import {
-  useCodeList, isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded, useResultType,
+  useCodeList, useResultType,
 } from '../../Utils';
+import { isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded } from '../../selectors';
 
 // == Composant
 const Survey = ({

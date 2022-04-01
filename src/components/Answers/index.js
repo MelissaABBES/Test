@@ -1,7 +1,7 @@
 // == Import
 import './styles.css';
 import { useSelector } from 'react-redux';
-import { isAnswersInSurvey } from '../../Utils';
+import { isAnswersInSurvey } from '../../selectors';
 import Results from './Results';
 
 // == Composant

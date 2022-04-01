@@ -14,7 +14,7 @@ export const stateInitial = {
   codeList: '',
 };
 
-export default (state = stateInitial, action = {}) => {
+const reducer = (state = stateInitial, action = {}) => {
   switch (action.type) {
     case IS_NOTLOAD:
       return {
@@ -45,3 +45,5 @@ export default (state = stateInitial, action = {}) => {
       return state;
   }
 };
+
+export default reducer;
