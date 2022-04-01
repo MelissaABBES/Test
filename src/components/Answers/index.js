@@ -13,7 +13,7 @@ const Answers = () => {
         answers.map((element) => (
           <div className="type">
             <div className="label">{element.label}</div>
-            <Results key={element.type} results={element.result} />
+            <Results key={element.type} results={element.result} types={element.type} />
           </div>
         ))
       }

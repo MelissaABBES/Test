@@ -7,6 +7,7 @@ export const RECEIVED_DETAILS = 'RECEIVED_DETAILS';
 
 export const ISLOAD = 'ISLOAD';
 export const IS_NOTLOAD = 'IS_NOTLOAD';
+export const CHANGE_VISIBILITY = 'CHANGE_VISIBILITY';
 
 export const fetchList = () => ({
   type: FETCH_LIST,
@@ -37,4 +38,8 @@ export const isLoaded = () => ({
 
 export const isNotLoaded = () => ({
   type: IS_NOTLOAD,
+});
+
+export const changeVisibility = () => ({
+  type: CHANGE_VISIBILITY,
 });

@@ -4,11 +4,12 @@ import {
   IS_NOTLOAD,
   RECEIVED_DETAILS,
   RECEIVED_LIST,
+  CHANGE_VISIBILITY,
 } from '../actions';
 
 export const stateInitial = {
   isLoad: false,
-  isNotLoad: false,
+  isNotLoad: true,
   list: [],
   answers: [],
   codeList: '',
@@ -16,10 +17,16 @@ export const stateInitial = {
 
 const reducer = (state = stateInitial, action = {}) => {
   switch (action.type) {
+    case CHANGE_VISIBILITY:
+      return {
+        ...state,
+        isLoad: !state.isLoad,
+        isNotLoad: !state.isNotLoad,
+      };
     case IS_NOTLOAD:
       return {
         ...state,
-        isNotLoad: state.isNotLoad,
+        isNotLoad: !state.isNotLoad,
       };
     case ISLOAD:
       return {

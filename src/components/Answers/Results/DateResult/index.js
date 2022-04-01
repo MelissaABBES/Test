@@ -22,13 +22,9 @@ const DateResult = ({ ArrayResult }) => {
 
   const newResult = Object.keys(formatDateX, formatDateY).map((cle) => [formatDateY[cle], formatDateX[cle]]);
 
-  console.log(newResult);
-
   const datas = newResult.sort().map((res) => (
     [res[1], res[0]]
   ));
-
-  console.log(datas);
 
   // Chart style
   const style = {
@@ -47,7 +43,7 @@ const DateResult = ({ ArrayResult }) => {
     },
     markLine: {
       symbol: ['none', 'none'],
-        label: { show: false },
+      label: { show: false },
       data: [{ xAxis: 1 }, { xAxis: 2 }, { xAxis: 4 }],
     },
     series: [

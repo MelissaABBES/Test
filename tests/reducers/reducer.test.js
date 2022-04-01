@@ -28,7 +28,7 @@ describe('Reducer for Survey List', () => {
     const action = fetchList();
     const expectedResult = {
       isLoad: false,
-      isNotLoad: false,
+      isNotLoad: true,
       list: [],
       answers: [],
       codeList: '',
@@ -47,7 +47,7 @@ describe('Reducer for Survey List', () => {
     // loading: false
     const expectedState = {
       isLoad: false,
-      isNotLoad: false,
+      isNotLoad: true,
       list: data,
       answers: [],
       codeList: '',

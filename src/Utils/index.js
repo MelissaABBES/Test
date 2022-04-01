@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchList } from '../actions';
 import { getListOfSurveys, isCodeListInState, isAnswersInSurvey } from '../selectors';
@@ -24,6 +24,18 @@ export function useCodeList() {
 
 export function useResultType() {
   const results = useSelector(isAnswersInSurvey);
-  const getType = results.map((type) => type.type);
-  return getType;
+  const getTypes = results.map((type) => type.type);
+  return getTypes;
+}
+
+export function useTypeResult(initialTypeValue = useResultType()) {
+  const [type, setType] = useState(initialTypeValue);
+
+  const sortResultType = function () {
+    return setType();
+  };
+  return [
+    type,
+    sortResultType,
+  ];
 }

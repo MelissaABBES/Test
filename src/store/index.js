@@ -19,7 +19,6 @@ const enhancers = composeEnhancers(
 // == Store
 const store = createStore(
   rootReducer,
-  // preloadedState,
   enhancers,
 );
 

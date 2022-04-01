@@ -1,6 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded, isCodeListInState, getListOfSurveys } from '../../src/Utils';
-import data from '../../public/api/list.json';
+import { isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded, isCodeListInState } from '../../src/selectors';
 
 describe('isSurveyAnswersLoaded selector', () => {
   describe('when state isLoaded is `false`', () => {
@@ -20,7 +19,7 @@ describe('isSurveyAnswersIsNotLoaded selector', () => {
 
 describe('isCodeListInState selector', () => {
   describe('when state codeList is empty', () => {
-    test('should return " " ', () => {
+    test('should return empty ', () => {
       expect(isCodeListInState({codeList: ''})).toBe("");
     });
   })

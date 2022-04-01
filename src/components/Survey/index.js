@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import Answers from '../Answers';
 import {
-  useCodeList, useResultType,
+  useCodeList,
 } from '../../Utils';
 import { isSurveyAnswersLoaded, isSurveyAnswersIsNotLoaded } from '../../selectors';
 
@@ -16,8 +16,8 @@ const Survey = ({
   const isNotLoaded = useSelector(isSurveyAnswersIsNotLoaded);
 
   const getCodeList = useCodeList();
-  const surveyVisible = isLoaded ? 'survey-selected' : 'survey';
-  const answerVisible = isLoaded ? 'details-survey-open' : 'details-survey';
+  const surveyVisible = isLoaded ? 'survey' : 'survey-selected';
+  const answerVisible = isLoaded ? 'details-survey' : 'details-survey-open';
 
   const handleClick = (evt) => {
     evt.preventDefault();
@@ -38,7 +38,7 @@ const Survey = ({
           <div className="body_code">{code}</div>
         </div>
         <div className={answerVisible}>
-          { isLoaded && <Answers key={name} /> }
+          { !isLoaded && <Answers key={name} /> }
         </div>
       </div>
     );
@@ -56,7 +56,7 @@ const Survey = ({
         <div className="body_code">{code}</div>
       </div>
       <div className={answerVisible}>
-        { isNotLoaded && <Answers key={name} /> }
+        { !isNotLoaded && <Answers key={name} /> }
       </div>
     </div>
   );

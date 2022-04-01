@@ -1,26 +1,8 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import ReactEcharts from 'echarts-for-react';
-
-// function useAutoIncrement(initialValue = 0, step = 1, finalValue = 10) {
-//   const [count, setCount] = useState(initialValue);
-
-//   useEffect(() => {
-//     const timer = window.setInterval(() => {
-//       do {
-//         setCount((c) => c + step);
-//       } while (initialValue !== finalValue);
-//     }, 10);
-//     return function () {
-//       clearInterval(timer);
-//     };
-//   }, []);
-//   return count;
-// }
 
 const NumberResult = ({ productResult }) => {
   const NumbResult = Number(Math.floor(productResult));
-  // const count = useAutoIncrement(0, 1);
   // Chart style
   const style = {
     height: '60vh',
